@@ -16,6 +16,6 @@
   "[scss]": {
     "editor.formatOnSave": false
   },
-  "liveServer.settings.port": 5505,
+  "liveServer.settings.port": 5506,
   "editor.codeActionsOnSave": {}
 }

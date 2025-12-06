@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+.guide_header_wrap{position:sticky;top:0;left:0;width:100%;z-index:60; background:#29303d;padding:22px 25px; text-align: center; box-sizing: border-box;} 
+.guide_util_wrap{}
+.guide_util{
+    position:absolute;bottom:20px; color:#fff; font-size:17px;
+    &.left_pos{left:25px;}
+    &.right_pos{right:25px;}
+}
+.guide_head_title{font-size:28px; color:#fff; font-weight:700;}
+
+@media (max-width:1260px){
+    
+}
+
+@media (max-width:1023px){
+    .guide_header_wrap{padding:15px;} 
+    .guide_util_wrap{display:flex; justify-content: space-between; align-items: center; margin-top:10px;}
+    .guide_util{
+        position:static;font-size:13px;
+    }
+    .guide_head_title{font-size:20px; }
+}
