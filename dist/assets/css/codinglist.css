@@ -148,3 +148,8 @@ a:hover {
   padding: 10px;
   margin: 30px 0;
 }
+
+.level_1 td{background:#fcdada;}
+.level_2 td{background:#fce5da;}
+.level_3 td{background:#fcebda;}
+.level_4 td{background:#fffcea;}
