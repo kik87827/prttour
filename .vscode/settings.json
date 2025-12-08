@@ -17,5 +17,7 @@
     "editor.formatOnSave": false
   },
   "liveServer.settings.port": 5506,
-  "editor.codeActionsOnSave": {}
+  "editor.codeActionsOnSave": {},
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true
 }
