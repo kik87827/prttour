@@ -3502,13 +3502,13 @@ span.ui-datepicker-month {
 
 .banner-chipcard-title-row {
   text-align: center;
-  padding: 0 30px 15px;
+  padding: 0 30px 20px;
   position: relative;
   margin: 0 auto;
   max-width: 1200px;
 }
 .banner-chipcard-title-row .banner-chipcard-title {
-  font-weight: 700;
+  font-weight: 500;
   color: #333;
   font-size: 28px;
   letter-spacing: -1px;
@@ -3758,6 +3758,177 @@ span.ui-datepicker-month {
   .cspec_th {
     width: auto;
     white-space: normal;
+  }
+}
+/* product template */
+.plate_linkage_zone {
+  position: relative;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.btn_plate_navi {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  top: 50%;
+  z-index: 5;
+  transform: translateY(-50%);
+}
+.btn_plate_navi.prev_navi {
+  left: -80px;
+}
+.btn_plate_navi.prev_navi:after {
+  transform: rotate(-135deg);
+  margin-left: -2px;
+}
+.btn_plate_navi.next_navi {
+  right: -80px;
+}
+.btn_plate_navi:after {
+  display: block;
+  content: "";
+  width: 12px;
+  height: 12px;
+  border-top: 1px solid #000;
+  border-right: 1px solid #000;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -7px 0 0 -8px;
+  transform: rotate(45deg);
+}
+
+.swiper-container.plate-swiper .swiper-wrapper {
+  padding-top: 10px;
+}
+.plate-chipcard-item {
+  height: 360px;
+  position: relative;
+  display: block;
+  transition: transform 1s;
+  transform: translateY(0);
+}
+.plate-chipcard-item:hover {
+  transform: translateY(-10px);
+}
+
+.plate-text-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 26px 28px;
+  background: url("../images/dim_thum.png") repeat-x 0 0;
+}
+.plate-text-group .plate-text-main, .plate-text-group .plate-text-sub {
+  color: #fff;
+  line-height: 1.3;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+.plate-text-group .plate-text-main {
+  font-size: 18px;
+}
+.plate-text-group .plate-text-sub {
+  margin-top: 8px;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.plate-img-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.plate-img-group > img {
+  vertical-align: top;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: 50% 50%;
+     object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  transform: scale(1);
+}
+.plate-img-group img.mb_thum_img {
+  display: none;
+}
+
+.plate-chipcard-title-row {
+  text-align: center;
+  padding: 0 30px 15px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.plate-chipcard-title-row .plate-chipcard-title {
+  font-weight: 700;
+  color: #333;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+@media (max-width: 1500px) {
+  .plate_swiper_wrap {
+    padding: 0 100px;
+  }
+  .btn_plate_navi.prev_navi {
+    left: 30px;
+  }
+  .btn_plate_navi.next_navi {
+    right: 30px;
+  }
+}
+@media (max-width: 1023px) {
+  /* .plate-chipcard-item {width:calc(100vw - 20px);} */
+  .plate_swiper_wrap {
+    padding: 0 30px;
+  }
+  .btn_plate_navi {
+    width: 30px;
+    height: 30px;
+  }
+  .btn_plate_navi:after {
+    margin: -6px 0 0 -5px;
+  }
+  .btn_plate_navi.prev_navi {
+    left: 0;
+  }
+  .btn_plate_navi.next_navi {
+    right: 0;
+  }
+  .btn_plate_navi.next_navi:after {
+    margin-left: -9px;
+  }
+  .plate-text-group .plate-text-sub {
+    font-size: 16px;
+  }
+  .plate-text-group .plate-text-main {
+    font-size: 14px;
+  }
+  .plate-chipcard-title-row {
+    padding: 0 20px 20px;
+  }
+  .plate-chipcard-title-row .plate-chipcard-title {
+    font-size: 24px;
+  }
+}
+@media (max-width: 767px) {
+  .plate-img-group img.pc_thum_img {
+    display: none;
+  }
+  .plate-img-group img.mb_thum_img {
+    display: block;
   }
 }
 /*# sourceMappingURL=style.css.map */
