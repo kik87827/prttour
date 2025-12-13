@@ -1,3 +1,83 @@
+/* main visual */
+.main_visual_zone{
+    .swiper-pagination{
+        position:static;margin:0;padding:0; font-size:0; line-height:0; margin:23px 0 0;
+        .swiper-pagination-bullet{
+            margin:0 3px; width:10px; height:10px; border-radius: 100%; background:#fff; opacity: 1;
+            &.swiper-pagination-bullet-active{background:#000; transform: scale(1);}
+        }
+    }
+    &.full_type{
+        .swiper-pagination{
+
+        }
+        .mv_field_layer{}
+    }
+}
+.mv_swiper_wrap{}
+.btn_mv_control{
+    &.prev_navi{}
+    &.next_navi{}
+}
+.swiper-container{
+    &.mv_swiper{
+        .swiper-wrapper{}
+        .swiper-slide{}
+    }
+}
+.mv_swiper_item{}
+.mv_bg{
+    > img{}
+}
+.mv_copy_group{}
+.mv_main_copy{}
+.mv_sub_copy{}
+.mv_field_layer{}
+.mv_field_tab_row{}
+.mv_field_tab_list{
+    > li{
+
+    }
+}
+.mv_field_tab{
+    &.active{}
+}
+.mv_field_form_row{}
+.mv_field_formbox{}
+.mv_field_formitem_list{
+    > li{}
+}
+.mv_field_formitem{}
+.mv_field_ico{
+    &.shape_where{}
+    &.shape_when{}
+    &.shape_search{}
+    &.shape_product{}
+}
+.search_form_text_g{flex:1;min-width:0;display:flex;align-items: center;}
+.search_form_text_place{font-size:14px; color:#999999;}
+.search_form_text_result_row{display:none;min-height:20px;}
+.search_form_text_result{font-size:14px;color:#000;line-height:1.3;display:inline;}
+.search_form_text_result_wrap{display:flex;align-items: center;}
+.btn_search_result_reset{display:inline;width:16px;height:16px;vertical-align: middle;position:relative;top:-2px;margin-left:5px;
+    &:before,
+    &:after{display:block;content:'';width:1px;height:14px;background:#000;position:absolute;top:50%;left:50%;margin:-7px 0 0 -0.5px;}
+    &:before{transform: rotate(45deg);}
+    &:after{transform: rotate(-45deg);}
+}
+/* .btn_search_form{display:flex; min-height:50px; background:#2b8bf2; border-radius:5px; justify-content: center; align-items: center; padding:0 10px 2px; box-sizing: border-box;}
+.btn_search_form_text{font-size:16px; color:#fff;} */
+.mv_field_btn_cell{
+
+}
+.btn_mv_submit{
+    .ico{
+        &.shape_search{}
+    }
+    .text_node{}
+}
+/* // main visual */
+
 /* 스크롤 배너 */
 .banner-chipcard-zone {
     position:relative;overflow:hidden;padding-top:10px;
