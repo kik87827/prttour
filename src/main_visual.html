@@ -39,6 +39,15 @@
                     </div>
                   </div>
                 </div>
+                <div class="swiper-slide">
+                  <div class="mv_swiper_item">
+                    <div class="mv_bg"><video playsinline webkit-playsinline muted preload="metadata" src="test_media.mp4"></video></div>
+                    <div class="mv_copy_group">
+                      <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
+                      <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
+                    </div>
+                  </div>
+                </div>
               </div>
               <div class="swiper-pagination"></div>
             </div>
@@ -103,6 +112,43 @@
         </div>
         <!-- // -->
       </main>
+      <script>
+        var main_visual = new Swiper(".swiper-container.mv_swiper", {
+          speed: 800,
+          loop: true,
+          navigation: {
+            nextEl: ".btn_mv_control.next_navi",
+            prevEl: ".btn_mv_control.prev_navi",
+          },
+          pagination: {
+            el: ".main_visual_zone .swiper-pagination",
+            clickable: true,
+          },
+          on: {
+            slideChangeTransitionEnd: function () {
+              const swiper = this; // ★ 핵심
+
+              // 모든 비디오 정지
+              swiper.el.querySelectorAll("video").forEach((video) => {
+                video.pause();
+                video.currentTime = 0;
+              });
+
+              // 활성 슬라이드의 비디오만 재생
+              const activeSlide = swiper.slides[swiper.activeIndex];
+              const video = activeSlide.querySelector("video");
+
+              if (video) {
+                video.play().catch(() => {
+                  // iOS autoplay 차단 대비 (에러 무시)
+                });
+              }
+            },
+          },
+        });
+      </script>
+      <!-- prettier-ignore -->
+      @@include('mv_layer.html')
       @@include('./include/_footer.html')
     </div>
   </body>

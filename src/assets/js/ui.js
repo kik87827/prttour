@@ -512,8 +512,8 @@ function posLayerEvent() {
     var thisLayer = $($(this).closest("[data-poslayer]").attr("data-poslayer"));
 
     thisLayer.find(".input_search_field").val("");
-    $(this).parents(".search_field_target,.mv_form_item,.mv_vboth_wbox").removeClass("result_mode");
-    $(this).parents(".search_field_target,.mv_form_item,.mv_vboth_wbox").find(".search_form_text_result,.mv_vboth_wbox_result").text("");
+    $(this).parents(".mv_field_formitem").removeClass("result_mode");
+    $(this).parents(".mv_field_formitem").find(".search_form_text_result").text("");
   });
 
   $(document).on("click", ".choice_item", function (e) {

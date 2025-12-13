@@ -67,7 +67,7 @@
                     </div>
                   </li>
                   <li>
-                    <div class="mv_field_formitem" id="layer_box_date">
+                    <div class="mv_field_formitem" data-poslayer="#layer_box_service">
                       <i class="mv_field_ico shape_product"></i>
                       <div class="search_form_text_g">
                         <div class="search_form_text_place">상품구분</div>
@@ -103,6 +103,43 @@
         </div>
         <!-- // -->
       </main>
+      <script>
+        var main_visual = new Swiper(".swiper-container.mv_swiper", {
+          speed: 800,
+          loop: true,
+          navigation: {
+            nextEl: ".btn_mv_control.next_navi",
+            prevEl: ".btn_mv_control.prev_navi",
+          },
+          pagination: {
+            el: ".main_visual_zone .swiper-pagination",
+            clickable: true,
+          },
+          on: {
+            slideChangeTransitionEnd: function () {
+              const swiper = this; // ★ 핵심
+
+              // 모든 비디오 정지
+              swiper.el.querySelectorAll("video").forEach((video) => {
+                video.pause();
+                video.currentTime = 0;
+              });
+
+              // 활성 슬라이드의 비디오만 재생
+              const activeSlide = swiper.slides[swiper.activeIndex];
+              const video = activeSlide.querySelector("video");
+
+              if (video) {
+                video.play().catch(() => {
+                  // iOS autoplay 차단 대비 (에러 무시)
+                });
+              }
+            },
+          },
+        });
+      </script>
+      <!-- prettier-ignore -->
+      @@include('mv_layer.html')
       @@include('./include/_footer.html')
     </div>
   </body>
