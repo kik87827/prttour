@@ -146,7 +146,7 @@
           const entry_banner_package = document.querySelectorAll(".entry_banner_package");
           const entry_banner_array = [];
           entry_banner_package.forEach((el, index) => {
-            const entry_swiper = el.querySelectorAll(".swiper-container.entry_swiper");
+            const entry_swiper = el.querySelector(".swiper-container.entry_swiper");
             const nextBtn = el.querySelector(".next_navi");
             const prevBtn = el.querySelector(".prev_navi");
             const swiperPagination = el.querySelector(".swiper-pagination");
