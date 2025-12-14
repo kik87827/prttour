@@ -355,6 +355,7 @@ input.input_search{flex:1;background:none;border:0;padding:0 20px;box-sizing: bo
     flex:1;width:100%; box-sizing: border-box;
     &.detail_wrap{max-width:1260px;margin:0 auto;padding:60px 30px 120px;}
     &.has_svtype{padding:0 0 120px;}
+    &.has_fullcont{display:flex; flex-direction: column; min-height:0;}
 }
 
 /* footer */
