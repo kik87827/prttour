@@ -809,7 +809,56 @@
 /* // moving banner */
 
 
-/* product template2 */
+/* product template */
+.dptop_title_row{text-align: center; margin-bottom:20px;}
+.dptop_title{font-size:28px; font-weight:500; text-align: center;}
+.dptop_tab_row{margin-bottom:30px;}
+.dpitem_contents_row{
+
+}
+.dpitem_horizon{
+    margin:0 auto 63px; display:flex; gap:20px; max-width:1400px;
+    &:last-of-type{margin-bottom:0;}
+}
+.dpfront_cols{
+    flex:0 0 264px; width:264px;
+}
+.dpfront_box{
+    min-height:100%; padding:20px; box-sizing: border-box; display:flex; flex-direction: column; justify-content: space-between; gap:20px;
+}
+.dpf_row{
+
+}
+.dpfront_copy{
+    font-size:15px; color:#fff; font-weight:500;
+}
+.btn_dfp_ico{display:inline-block; width:30px; height:30px; background:url("../images/ico_direct_go_30_w.png") no-repeat 0 0/100% auto;}
+.dpscroll_cols{
+    flex:1; min-width:0;
+}
+.dphor_swiper_zone{
+    position:relative;
+    .swiper-scrollbar {
+        background:#f5f5f5;height:6px;width:100%; position:absolute;bottom:-25px;
+        .swiper-scrollbar-drag {
+            background:#b4b4b4;cursor:pointer;position:relative;
+            &:after {display:block;content:'';width:100%;height:20px;position:absolute;top:50%;left:0;transform:translate(0,-50%);}
+        }
+    }
+}
+.dphor_swiper_wrap{
+
+}
+.swiper-container{
+    &.dp_swipe{
+        .swiper-wrapper{
+            .swiper-slide{
+                .widget_chip_item{}
+            }
+        }
+
+    }
+}
 .filled_container{padding:50px 0;}
 .filled_title_row{text-align: center; margin-bottom:20px;}
 .filled_title{font-size:28px; font-weight:500; text-align: center;}
@@ -860,8 +909,13 @@
     position:relative; flex:0 0 220px; height:220px;
     img{}
 }
+.widget_thum_layer{
+    .flag_box{}
+}
+.flag_box{}
 .widget_spec_row{flex:1;}
 .widget_main_name{}
+.widget_sec_name{}
 .widget_price_row{}
 .widget_price_item{}
 .widget_price_number{}
@@ -873,4 +927,4 @@
     .widget_eval_main{}
     .widget_eval_sub{}
 }
-/* // product template2 */
+/* // product template */
