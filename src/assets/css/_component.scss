@@ -927,6 +927,22 @@
     .widget_eval_main{}
     .widget_eval_sub{}
 }
+.widget_thum_swiper_wrap{}
+.swiper-container{
+    &.widget_thum_swipe{
+        .swiper-wrapper{}
+        .swiper-slide{
+            > img{}
+        }
+    }
+    .swiper-pagination{
+        margin:0;padding:0; font-size:0; line-height:0;  bottom:10px;
+        .swiper-pagination-bullet{
+            margin:0 1px; width:8px; height:8px; border-radius: 100%; background:#fff; opacity: .5;
+            &.swiper-pagination-bullet-active{ transform: scale(1); opacity: 1;}
+        }
+    }
+}
 /* // product template */
 
 /* sns */

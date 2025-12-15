@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ko">
+  @@include('./include/_head.html')
+
+  <body class="front_body">
+    <div class="page_wrap">
+      <div class="widget_thum_swiper_wrap" style="width: 264px">
+        <div class="swiper-container widget_thum_swipe">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_01.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_02.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_03.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_04.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_01.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+      <div class="widget_thum_swiper_wrap" style="width: 264px">
+        <div class="swiper-container widget_thum_swipe">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_01.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_02.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_03.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_04.jpg" alt="" />
+            </div>
+            <div class="swiper-slide">
+              <img src="./assets/images/img_264x220_01.jpg" alt="" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </div>
+
+      <script>
+        document.addEventListener("DOMContentLoaded", () => {
+          thumnailSlide();
+        });
+
+        function thumnailSlide() {
+          // hover 가능한 디바이스에서만 실행
+          if (window.matchMedia("(hover: hover)").matches) {
+            document.querySelectorAll(".widget_thum_swipe").forEach((el) => {
+              el.addEventListener("mouseenter", () => {
+                if (el.swiper) {
+                  el.swiper.autoplay.start();
+                  return;
+                }
+
+                el.swiper = new Swiper(el, {
+                  loop: true,
+                  slidesPerView: 1,
+                  autoplay: {
+                    delay: 1200,
+                    disableOnInteraction: false,
+                  },
+                  pagination: {
+                    el: el.querySelector(".swiper-pagination"),
+                    clickable: true,
+                  },
+                });
+              });
+
+              el.addEventListener("mouseleave", () => {
+                if (el.swiper) {
+                  el.swiper.autoplay.stop();
+                }
+              });
+            });
+          }
+        }
+      </script>
+    </div>
+  </body>
+</html>
