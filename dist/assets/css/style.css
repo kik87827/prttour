@@ -5981,8 +5981,8 @@ span.ui-datepicker-month {
 .brick_photo_layout {
   display: flex;
   gap: 15px;
-  -webkit-animation: scrollUpGrid 15s linear infinite;
-          animation: scrollUpGrid 15s linear infinite;
+  -webkit-animation: scrollUpGrid 20s linear infinite;
+          animation: scrollUpGrid 20s linear infinite;
 }
 
 .brick_column {
@@ -6014,6 +6014,41 @@ span.ui-datepicker-month {
   }
   100% {
     transform: translateY(-50%);
+  }
+}
+@media (max-width: 1430px) {
+  .sns_px_layout {
+    width: auto;
+    gap: 50px;
+    padding: 0 30px;
+  }
+  .sns_key_cols {
+    flex-basis: 280px;
+  }
+}
+@media (max-width: 1023px) {
+  .sns_px_layout {
+    flex-direction: column;
+    gap: 0;
+    padding: 0 10px;
+  }
+  .sns_key_cols {
+    flex-basis: 0;
+    padding: 20px 0;
+  }
+  .brick_photo_layout {
+    gap: 10px;
+  }
+  .sns_key_title {
+    font-size: 20px;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+  }
+}
+@media (max-width: 768px) {
+  .brick_column,
+.brick_photo_layout {
+    gap: 5px;
   }
 }
 /* // sns */
