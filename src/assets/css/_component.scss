@@ -1017,6 +1017,7 @@
     }
     .dpfront_cols{flex-basis: 200px; width:200px;}
     .dpfront_copy{
+        line-height:1.5;
         br{display:none}
     }
     .dpfront_box{flex-direction: row; font-size:0;line-height:0; align-items: center;}
