@@ -1,18 +1,28 @@
 /* main visual */
 .main_visual_zone{
     max-width:1400px; position:relative; margin:0 auto;
-    .swiper-pagination{
-        margin:0;padding:0; font-size:0; line-height:0;  bottom:20px;
-        .swiper-pagination-bullet{
-            margin:0 3px; width:10px; height:10px; border-radius: 100%; background:#fff; opacity: 1;
-            &.swiper-pagination-bullet-active{background:#000; transform: scale(1);}
+    .swiper-container{
+        &.mv_swiper{
+            .swiper-wrapper{}
+            .swiper-slide{}
+        }
+        .swiper-pagination{
+            margin:0;padding:0; font-size:0; line-height:0;  bottom:20px;
+            .swiper-pagination-bullet{
+                margin:0 3px; width:10px; height:10px; border-radius: 100%; background:#fff; opacity: 1;
+                &.swiper-pagination-bullet-active{background:#000; transform: scale(1);}
+            }
         }
     }
     &.full_type{
-        max-width:100%;
-        .swiper-pagination{
-
+        .swiper-container{
+            &.mv_swiper{
+            }
+            .swiper-pagination{
+                bottom:60px;
+            }
         }
+        max-width:100%;
         .mv_field_layer{max-width:1200px; left:50%; transform: translateX(-50%); bottom:-35px; }
         .mv_field_formbox{border:1px solid #727272;background:#fff;}
     }
@@ -28,12 +38,7 @@
         display:block; content:''; width:18px; height:18px; border-top:2px solid #fff; border-right:2px solid #fff; position:absolute;top:50%;left:50%; margin:-11px 0 0 -16px; transform: rotate(45deg);
     }
 }
-.swiper-container{
-    &.mv_swiper{
-        .swiper-wrapper{}
-        .swiper-slide{}
-    }
-}
+
 .mv_swiper_item{position:relative; height:400px;}
 .mv_bg{
     position:absolute;top:0;left:0;width:100%; height:100%;
@@ -110,7 +115,20 @@
         &.full_type{
             .mv_field_layer{max-width:100%; left:0; transform: translateX(0); bottom:-35px; }
         }
+        .swiper-container{
+            .swiper-pagination{
+                bottom:15px;
+            }
+        }
+        &.full_type{
+            .swiper-container{
+                .swiper-pagination{
+                    bottom:15px;
+                }
+            }
+        }
     }
+
     .mv_copy_group{padding:40px 50px;}
     .btn_mv_control{width:30px;height:30px;
         &.prev_navi{
