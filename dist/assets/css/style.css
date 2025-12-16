@@ -5363,6 +5363,9 @@ span.ui-datepicker-month {
 
 .entry_banner_package {
   padding: 95px 0 70px;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: 50% 50%;
 }
 .entry_banner_package .swiper-pagination {
   position: static;
