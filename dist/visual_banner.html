@@ -29,6 +29,8 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_info_compo_wrap">
+				<!-- css -->
+				<link href="./assets/css/visual_banner.css" rel="stylesheet" />
 				<div class="entry_banner_package" style="background-image: url('./assets/images/bg_banner_100p_640.jpg')">
 					<div class="entry_banner_container">
 						<a href="#" class="btn_entry_control prev_navi"></a>
@@ -152,35 +154,36 @@
 					</div>
 					<div class="swiper-pagination"></div>
 				</div>
+				<!-- js -->
+				<script>
+					document.addEventListener("DOMContentLoaded", () => {
+						visualBanner();
+					});
+
+					function visualBanner() {
+						const entry_banner_package = document.querySelectorAll(".entry_banner_package");
+						const entry_banner_array = [];
+						entry_banner_package.forEach((el, index) => {
+							const entry_swiper = el.querySelector(".swiper-container.entry_swiper");
+							const nextBtn = el.querySelector(".next_navi");
+							const prevBtn = el.querySelector(".prev_navi");
+							const swiperPagination = el.querySelector(".swiper-pagination");
+							entry_banner_array[index] = new Swiper(entry_swiper, {
+								loop: true,
+								navigation: {
+									nextEl: nextBtn,
+									prevEl: prevBtn,
+								},
+								pagination: {
+									el: swiperPagination,
+									clickable: true,
+								},
+							});
+						});
+					}
+				</script>
 			</div>
 		</main>
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				visualBanner();
-			});
-
-			function visualBanner() {
-				const entry_banner_package = document.querySelectorAll(".entry_banner_package");
-				const entry_banner_array = [];
-				entry_banner_package.forEach((el, index) => {
-					const entry_swiper = el.querySelector(".swiper-container.entry_swiper");
-					const nextBtn = el.querySelector(".next_navi");
-					const prevBtn = el.querySelector(".prev_navi");
-					const swiperPagination = el.querySelector(".swiper-pagination");
-					entry_banner_array[index] = new Swiper(entry_swiper, {
-						loop: true,
-						navigation: {
-							nextEl: nextBtn,
-							prevEl: prevBtn,
-						},
-						pagination: {
-							el: swiperPagination,
-							clickable: true,
-						},
-					});
-				});
-			}
-		</script>
 	</div>
 </body>
 

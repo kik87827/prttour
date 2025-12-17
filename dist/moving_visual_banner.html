@@ -29,8 +29,10 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_info_compo_wrap">
-				<div class="banner-chipcard-title-row">
-					<h3 class="banner-chipcard-title">크루즈</h3>
+				<!-- css -->
+				<link href="./assets/css/moving_banner.css" rel="stylesheet" />
+				<div class="moving-top-title-row">
+					<h3 class="moving-top-title">크루즈</h3>
 				</div>
 				<div class="moving_banner_zone">
 					<div class="moving_banner_wrap">
@@ -102,38 +104,39 @@
 						</ul>
 					</div>
 				</div>
+				<!-- js -->
+				<script>
+					document.addEventListener("DOMContentLoaded", () => {
+						movingBanner();
+					});
+
+					function movingBanner() {
+						const movingBannerList = document.querySelector(".moving_banner_list");
+						const movingBannerLi = document.querySelectorAll(".moving_banner_list > li");
+						movingBannerLi.forEach((el) => {
+							el.addEventListener("mouseenter", (e) => {
+								let etarget = e.currentTarget;
+								etarget.classList.remove("hover", "hover_not");
+								movingBannerLi.forEach((el) => {
+									if (etarget !== el) {
+										el.classList.remove("hover", "hover_not");
+										el.classList.add("hover_not");
+									}
+								});
+								etarget.classList.add("hover");
+							});
+						});
+						movingBannerList.addEventListener("mouseleave", (e) => {
+							let etarget = e.currentTarget;
+							etarget.classList.remove("hover", "hover_not");
+							movingBannerLi.forEach((el) => {
+								el.classList.remove("hover", "hover_not");
+							});
+						});
+					}
+				</script>
 			</div>
 		</main>
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				movingBanner();
-			});
-
-			function movingBanner() {
-				const movingBannerList = document.querySelector(".moving_banner_list");
-				const movingBannerLi = document.querySelectorAll(".moving_banner_list > li");
-				movingBannerLi.forEach((el) => {
-					el.addEventListener("mouseenter", (e) => {
-						let etarget = e.currentTarget;
-						etarget.classList.remove("hover", "hover_not");
-						movingBannerLi.forEach((el) => {
-							if (etarget !== el) {
-								el.classList.remove("hover", "hover_not");
-								el.classList.add("hover_not");
-							}
-						});
-						etarget.classList.add("hover");
-					});
-				});
-				movingBannerList.addEventListener("mouseleave", (e) => {
-					let etarget = e.currentTarget;
-					etarget.classList.remove("hover", "hover_not");
-					movingBannerLi.forEach((el) => {
-						el.classList.remove("hover", "hover_not");
-					});
-				});
-			}
-		</script>
 	</div>
 </body>
 

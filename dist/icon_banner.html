@@ -28,6 +28,8 @@
 			</div>
 		</div>
 		<main class="middle_wrap">
+			<!-- css -->
+			<link href="./assets/css/icon_banner.css" rel="stylesheet" />
 			<div class="middle_info_compo_wrap">
 				<div class="icon_banner_container center_type">
 					<a href="#" class="btn_icon_control prev_navi"></a>
@@ -275,41 +277,42 @@
 					<a href="#" class="btn_icon_control next_navi"></a>
 				</div>
 			</div>
-		</main>
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				iconBanner();
-			});
-
-			function iconBanner() {
-				const icon_swiper_container = document.querySelectorAll(".icon_banner_container");
-				const icon_swiper_array = [];
-				icon_swiper_container.forEach((el, index) => {
-					const icon_swiper = el.querySelectorAll(".swiper-container.icon_banner_swiper");
-					const nextBtn = el.querySelector(".next_navi");
-					const prevBtn = el.querySelector(".prev_navi");
-					icon_swiper_array[index] = new Swiper(icon_swiper, {
-						slidesPerView: 7,
-						spaceBetween: 20,
-						loop: true,
-						navigation: {
-							nextEl: nextBtn,
-							prevEl: prevBtn,
-						},
-						breakpoints: {
-							1500: {
-								spaceBetween: 15,
-								slidesPerView: 5,
-							},
-							1023: {
-								spaceBetween: 5,
-								slidesPerView: 4,
-							},
-						},
-					});
+			<!-- js -->
+			<script>
+				document.addEventListener("DOMContentLoaded", () => {
+					iconBanner();
 				});
-			}
-		</script>
+
+				function iconBanner() {
+					const icon_swiper_container = document.querySelectorAll(".icon_banner_container");
+					const icon_swiper_array = [];
+					icon_swiper_container.forEach((el, index) => {
+						const icon_swiper = el.querySelectorAll(".swiper-container.icon_banner_swiper");
+						const nextBtn = el.querySelector(".next_navi");
+						const prevBtn = el.querySelector(".prev_navi");
+						icon_swiper_array[index] = new Swiper(icon_swiper, {
+							slidesPerView: 7,
+							spaceBetween: 20,
+							loop: true,
+							navigation: {
+								nextEl: nextBtn,
+								prevEl: prevBtn,
+							},
+							breakpoints: {
+								1500: {
+									spaceBetween: 15,
+									slidesPerView: 5,
+								},
+								1023: {
+									spaceBetween: 5,
+									slidesPerView: 4,
+								},
+							},
+						});
+					});
+				}
+			</script>
+		</main>
 	</div>
 </body>
 

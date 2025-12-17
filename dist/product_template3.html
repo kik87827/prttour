@@ -29,18 +29,21 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_info_compo_wrap">
+				<!-- css -->
+				<link href="./assets/css/list_item.css" rel="stylesheet" />
+				<link href="./assets/css/product_template3.css" rel="stylesheet" />
 				<div class="filled_container" style="background-color: #e7eef8">
 					<div class="filled_title_row">
 						<h3 class="filled_title">인기투어</h3>
 					</div>
 					<div class="filled_tab_row">
-						<div class="pod_tab_wrap">
-							<ul class="pod_tab_list">
+						<div class="cap_tab_wrap">
+							<ul class="cap_tab_list">
 								<li>
-									<a href="#" class="pod_tab active"><span class="text_node">패키지</span></a>
+									<a href="#" class="cap_tab active"><span class="text_node">패키지</span></a>
 								</li>
 								<li>
-									<a href="#" class="pod_tab"><span class="text_node">1등특가</span></a>
+									<a href="#" class="cap_tab"><span class="text_node">1등특가</span></a>
 								</li>
 							</ul>
 						</div>
@@ -194,8 +197,6 @@
 						</div>
 					</div>
 				</div>
-				<br />
-				<br />
 				<br />
 				<br />
 				<br />
@@ -205,13 +206,13 @@
 						<h3 class="filled_title">인기투어</h3>
 					</div>
 					<div class="filled_tab_row">
-						<div class="pod_tab_wrap">
-							<ul class="pod_tab_list">
+						<div class="cap_tab_wrap">
+							<ul class="cap_tab_list">
 								<li>
-									<a href="#" class="pod_tab active"><span class="text_node">패키지</span></a>
+									<a href="#" class="cap_tab active"><span class="text_node">패키지</span></a>
 								</li>
 								<li>
-									<a href="#" class="pod_tab"><span class="text_node">1등특가</span></a>
+									<a href="#" class="cap_tab"><span class="text_node">1등특가</span></a>
 								</li>
 							</ul>
 						</div>
@@ -365,105 +366,106 @@
 						</div>
 					</div>
 				</div>
+				<!-- js -->
+				<script>
+					document.addEventListener("DOMContentLoaded", () => {
+						productDisplay3();
+						thumnailSlide();
+					});
+
+					function productDisplay3() {
+						const band_swiper_zone = document.querySelectorAll(".band_swiper_zone");
+						const band_banner_array = [];
+						band_swiper_zone.forEach((el, index) => {
+							const band_swiper = el.querySelector(".swiper-container.band_swiper");
+							const band_slide = band_swiper.querySelectorAll(".swiper-slide");
+							const nextBtn = el.querySelector(".next_navi");
+							const prevBtn = el.querySelector(".prev_navi");
+							const swiperPagination = el.querySelector(".swiper-pagination.band_pagingation");
+
+							band_banner_array[index] = new Swiper(band_swiper, {
+								loop: true,
+								slidesPerView: 5, // 한 화면에 4개
+								slidesPerGroup: 1, // 한 번에 1개씩
+								spaceBetween: 24, // 간격
+								navigation: {
+									nextEl: nextBtn,
+									prevEl: prevBtn,
+								},
+								pagination: {
+									el: swiperPagination,
+									clickable: true,
+								},
+								on: {
+									init() {
+										band_slide.forEach((item) => {
+											item.style.minHeight = band_swiper.getBoundingClientRect().height + "px";
+										});
+									},
+									resize() {
+										band_slide.forEach((item) => {
+											item.style.minHeight = band_swiper.getBoundingClientRect().height + "px";
+										});
+									},
+								},
+								breakpoints: {
+									1400: {
+										slidesPerView: 3,
+									},
+									1023: {
+										spaceBetween: 15,
+										slidesPerView: 2,
+									},
+								},
+							});
+						});
+					}
+
+					function thumnailSlide() {
+						document.querySelectorAll(".widget_thum_swipe").forEach((el) => {
+							const swiper = new Swiper(el, {
+								loop: true,
+								slidesPerView: 1,
+								pagination: {
+									el: el.querySelector(".swiper-pagination"),
+									clickable: true,
+								},
+								allowTouchMove: false,
+							});
+
+							el.swiper = swiper;
+
+							el.addEventListener("mouseenter", () => {
+								// 조건은 항상 여기서 판단
+								if (!window.matchMedia("(hover: hover)").matches || window.innerWidth <= 1023) {
+									return;
+								}
+
+								// 🔥 렌더/리사이즈 안정화 후 실행
+								setTimeout(() => {
+									// 이미 나갔으면 무시
+									if (!el.matches(":hover")) return;
+
+									swiper.params.autoplay = {
+										delay: 1200,
+										disableOnInteraction: false,
+									};
+
+									swiper.autoplay.start();
+								}, 0);
+							});
+
+							el.addEventListener("mouseleave", () => {
+								if (swiper.autoplay) {
+									swiper.autoplay.stop();
+								}
+								swiper.params.autoplay = false;
+							});
+						});
+					}
+				</script>
 			</div>
 		</main>
-		<script>
-			document.addEventListener("DOMContentLoaded", () => {
-				productDisplay3();
-				thumnailSlide();
-			});
-
-			function productDisplay3() {
-				const band_swiper_zone = document.querySelectorAll(".band_swiper_zone");
-				const band_banner_array = [];
-				band_swiper_zone.forEach((el, index) => {
-					const band_swiper = el.querySelector(".swiper-container.band_swiper");
-					const band_slide = band_swiper.querySelectorAll(".swiper-slide");
-					const nextBtn = el.querySelector(".next_navi");
-					const prevBtn = el.querySelector(".prev_navi");
-					const swiperPagination = el.querySelector(".swiper-pagination.band_pagingation");
-
-					band_banner_array[index] = new Swiper(band_swiper, {
-						loop: true,
-						slidesPerView: 5, // 한 화면에 4개
-						slidesPerGroup: 1, // 한 번에 1개씩
-						spaceBetween: 24, // 간격
-						navigation: {
-							nextEl: nextBtn,
-							prevEl: prevBtn,
-						},
-						pagination: {
-							el: swiperPagination,
-							clickable: true,
-						},
-						on: {
-							init() {
-								band_slide.forEach((item) => {
-									item.style.minHeight = band_swiper.getBoundingClientRect().height + "px";
-								});
-							},
-							resize() {
-								band_slide.forEach((item) => {
-									item.style.minHeight = band_swiper.getBoundingClientRect().height + "px";
-								});
-							},
-						},
-						breakpoints: {
-							1400: {
-								slidesPerView: 3,
-							},
-							1023: {
-								spaceBetween: 15,
-								slidesPerView: 2,
-							},
-						},
-					});
-				});
-			}
-
-			function thumnailSlide() {
-				document.querySelectorAll(".widget_thum_swipe").forEach((el) => {
-					const swiper = new Swiper(el, {
-						loop: true,
-						slidesPerView: 1,
-						pagination: {
-							el: el.querySelector(".swiper-pagination"),
-							clickable: true,
-						},
-						allowTouchMove: false,
-					});
-
-					el.swiper = swiper;
-
-					el.addEventListener("mouseenter", () => {
-						// 조건은 항상 여기서 판단
-						if (!window.matchMedia("(hover: hover)").matches || window.innerWidth <= 1023) {
-							return;
-						}
-
-						// 🔥 렌더/리사이즈 안정화 후 실행
-						setTimeout(() => {
-							// 이미 나갔으면 무시
-							if (!el.matches(":hover")) return;
-
-							swiper.params.autoplay = {
-								delay: 1200,
-								disableOnInteraction: false,
-							};
-
-							swiper.autoplay.start();
-						}, 0);
-					});
-
-					el.addEventListener("mouseleave", () => {
-						if (swiper.autoplay) {
-							swiper.autoplay.stop();
-						}
-						swiper.params.autoplay = false;
-					});
-				});
-			}
-		</script>
 	</div>
 </body>
 

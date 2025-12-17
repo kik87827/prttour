@@ -28,6 +28,8 @@
 			</div>
 		</div>
 		<main class="middle_wrap has_fullcont">
+			<!-- css -->
+			<link href="./assets/css/sns.css" rel="stylesheet" />
 			<div class="sns_frame" style="background: #f7dfdf">
 				<div class="sns_px_layout">
 					<div class="sns_key_cols">
@@ -154,25 +156,26 @@
 					</div>
 				</div>
 			</div>
-		</main>
-		<script>
-			$(window).on("load", function() {
-				photoFrame();
-			});
-
-			function photoFrame() {
-				action();
-				$(window).on("resize", function() {
-					action();
+			<!-- js -->
+			<script>
+				$(window).on("load", function() {
+					photoFrame();
 				});
 
-				function action() {
-					$(".sns_px_layout").css({
-						height: $(window).height() - $(".guide_header_wrap").outerHeight(),
+				function photoFrame() {
+					action();
+					$(window).on("resize", function() {
+						action();
 					});
+
+					function action() {
+						$(".sns_px_layout").css({
+							height: $(window).height() - $(".guide_header_wrap").outerHeight(),
+						});
+					}
 				}
-			}
-		</script>
+			</script>
+		</main>
 	</div>
 </body>
 

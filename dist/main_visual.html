@@ -1047,7 +1047,8 @@
 		</header>
 
 		<main class="middle_wrap">
-			<!--  -->
+			<!-- css -->
+			<link href="./assets/css/main_visual.css" rel="stylesheet" />
 			<div class="main_visual_zone">
 				<div class="mv_swiper_wrap">
 					<a href="#" class="btn_mv_control prev_navi"></a>
@@ -1151,43 +1152,44 @@
 					</div>
 				</div>
 			</div>
+			<!-- js -->
+			<script>
+				var main_visual = new Swiper(".swiper-container.mv_swiper", {
+					speed: 800,
+					loop: true,
+					navigation: {
+						nextEl: ".btn_mv_control.next_navi",
+						prevEl: ".btn_mv_control.prev_navi",
+					},
+					pagination: {
+						el: ".main_visual_zone .swiper-pagination",
+						clickable: true,
+					},
+					on: {
+						slideChangeTransitionEnd: function() {
+							const swiper = this; // ★ 핵심
+
+							// 모든 비디오 정지
+							swiper.el.querySelectorAll("video").forEach((video) => {
+								video.pause();
+								video.currentTime = 0;
+							});
+
+							// 활성 슬라이드의 비디오만 재생
+							const activeSlide = swiper.slides[swiper.activeIndex];
+							const video = activeSlide.querySelector("video");
+
+							if (video) {
+								video.play().catch(() => {
+									// iOS autoplay 차단 대비 (에러 무시)
+								});
+							}
+						},
+					},
+				});
+			</script>
 			<!-- // -->
 		</main>
-		<script>
-			var main_visual = new Swiper(".swiper-container.mv_swiper", {
-				speed: 800,
-				loop: true,
-				navigation: {
-					nextEl: ".btn_mv_control.next_navi",
-					prevEl: ".btn_mv_control.prev_navi",
-				},
-				pagination: {
-					el: ".main_visual_zone .swiper-pagination",
-					clickable: true,
-				},
-				on: {
-					slideChangeTransitionEnd: function() {
-						const swiper = this; // ★ 핵심
-
-						// 모든 비디오 정지
-						swiper.el.querySelectorAll("video").forEach((video) => {
-							video.pause();
-							video.currentTime = 0;
-						});
-
-						// 활성 슬라이드의 비디오만 재생
-						const activeSlide = swiper.slides[swiper.activeIndex];
-						const video = activeSlide.querySelector("video");
-
-						if (video) {
-							video.play().catch(() => {
-								// iOS autoplay 차단 대비 (에러 무시)
-							});
-						}
-					},
-				},
-			});
-		</script>
 		<!-- prettier-ignore -->
 		<!-- layer -->
 		<div class="poslayer_z has_leftpos" id="layer_box_search" data-topmargin="20" data-topMobileMargin="0">

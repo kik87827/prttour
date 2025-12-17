@@ -29,6 +29,9 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_info_compo_wrap">
+				<!-- css -->
+				<link href="./assets/css/list_item.css" rel="stylesheet" />
+				<link href="./assets/css/product_template2.css" rel="stylesheet" />
 				<div class="dptop_title_row">
 					<h3 class="dptop_title">인기투어</h3>
 				</div>
@@ -892,123 +895,124 @@
 						<div class="dpscroll_cols">상품리스트 위와 동일</div>
 					</div>
 				</div>
+				<!-- js -->
+				<script>
+					window.addEventListener("load", () => {
+						productDisplay2();
+						thumnailSlide();
+					});
+
+					function productDisplay2() {
+						/*
+						  <div class="dphor_swiper_zone">
+						        <div class="dphor_swiper_wrap">
+						          <div class="swiper-container dp_swipe">
+						            <div class="swiper-wrapper">
+						              <div class="swiper-slide">
+						*/
+
+						const dphor_swiper_zone = document.querySelectorAll(".dphor_swiper_zone");
+						const dphor_banner_array = [];
+						dphor_swiper_zone.forEach((el, index) => {
+							const dp_swiper = el.querySelector(".swiper-container.dp_swipe");
+							const dp_slide = dp_swiper.querySelectorAll(":scope > .swiper-wrapper > .swiper-slide");
+							const nextBtn = el.querySelector(".next_navi");
+							const prevBtn = el.querySelector(".prev_navi");
+							const swiperScrollbar = el.querySelector(".swiper-scrollbar");
+							const swiperWrapper = el.querySelector(".swiper-wrapper.root-wrapper");
+
+							dphor_banner_array[index] = new Swiper(dp_swiper, {
+								slidesPerView: 4, // 한 화면에 4개
+								slidesPerGroup: 1, // 한 번에 1개씩
+								spaceBetween: 24, // 간격
+								navigation: {
+									nextEl: nextBtn,
+									prevEl: prevBtn,
+								},
+								scrollbar: {
+									el: swiperScrollbar,
+									draggable: true,
+								},
+								on: {
+									init() {
+										dp_slide.forEach((eachTarget) => {
+											eachTarget.style.removeProperty("height");
+										});
+										dp_slide.forEach((eachTarget) => {
+											eachTarget.style.height = swiperWrapper.getBoundingClientRect().height + "px";
+										});
+									},
+
+									resize() {
+										dp_slide.forEach((eachTarget) => {
+											eachTarget.style.removeProperty("height");
+										});
+										dp_slide.forEach((eachTarget) => {
+											eachTarget.style.height = swiperWrapper.getBoundingClientRect().height + "px";
+										});
+									},
+
+									slideChangeTransitionEnd() {},
+								},
+								breakpoints: {
+									1400: {
+										spaceBetween: 15,
+										slidesPerView: 3,
+									},
+									767: {
+										spaceBetween: 15,
+										slidesPerView: 2,
+									},
+								},
+							});
+						});
+					}
+
+					function thumnailSlide() {
+						document.querySelectorAll(".widget_thum_swipe").forEach((el) => {
+							const swiper = new Swiper(el, {
+								loop: true,
+								slidesPerView: 1,
+								pagination: {
+									el: el.querySelector(".swiper-pagination"),
+									clickable: true,
+								},
+								allowTouchMove: false,
+							});
+
+							el.swiper = swiper;
+
+							el.addEventListener("mouseenter", () => {
+								// 조건은 항상 여기서 판단
+								if (!window.matchMedia("(hover: hover)").matches || window.innerWidth <= 1023) {
+									return;
+								}
+
+								// 🔥 렌더/리사이즈 안정화 후 실행
+								setTimeout(() => {
+									// 이미 나갔으면 무시
+									if (!el.matches(":hover")) return;
+
+									swiper.params.autoplay = {
+										delay: 1200,
+										disableOnInteraction: false,
+									};
+
+									swiper.autoplay.start();
+								}, 0);
+							});
+
+							el.addEventListener("mouseleave", () => {
+								if (swiper.autoplay) {
+									swiper.autoplay.stop();
+								}
+								swiper.params.autoplay = false;
+							});
+						});
+					}
+				</script>
 			</div>
 		</main>
-		<script>
-			window.addEventListener("load", () => {
-				productDisplay2();
-				thumnailSlide();
-			});
-
-			function productDisplay2() {
-				/*
-				   <div class="dphor_swiper_zone">
-				        <div class="dphor_swiper_wrap">
-				          <div class="swiper-container dp_swipe">
-				            <div class="swiper-wrapper">
-				              <div class="swiper-slide">
-				*/
-
-				const dphor_swiper_zone = document.querySelectorAll(".dphor_swiper_zone");
-				const dphor_banner_array = [];
-				dphor_swiper_zone.forEach((el, index) => {
-					const dp_swiper = el.querySelector(".swiper-container.dp_swipe");
-					const dp_slide = dp_swiper.querySelectorAll(":scope > .swiper-wrapper > .swiper-slide");
-					const nextBtn = el.querySelector(".next_navi");
-					const prevBtn = el.querySelector(".prev_navi");
-					const swiperScrollbar = el.querySelector(".swiper-scrollbar");
-					const swiperWrapper = el.querySelector(".swiper-wrapper.root-wrapper");
-
-					dphor_banner_array[index] = new Swiper(dp_swiper, {
-						slidesPerView: 4, // 한 화면에 4개
-						slidesPerGroup: 1, // 한 번에 1개씩
-						spaceBetween: 24, // 간격
-						navigation: {
-							nextEl: nextBtn,
-							prevEl: prevBtn,
-						},
-						scrollbar: {
-							el: swiperScrollbar,
-							draggable: true,
-						},
-						on: {
-							init() {
-								dp_slide.forEach((eachTarget) => {
-									eachTarget.style.removeProperty("height");
-								});
-								dp_slide.forEach((eachTarget) => {
-									eachTarget.style.height = swiperWrapper.getBoundingClientRect().height + "px";
-								});
-							},
-
-							resize() {
-								dp_slide.forEach((eachTarget) => {
-									eachTarget.style.removeProperty("height");
-								});
-								dp_slide.forEach((eachTarget) => {
-									eachTarget.style.height = swiperWrapper.getBoundingClientRect().height + "px";
-								});
-							},
-
-							slideChangeTransitionEnd() {},
-						},
-						breakpoints: {
-							1400: {
-								spaceBetween: 15,
-								slidesPerView: 3,
-							},
-							767: {
-								spaceBetween: 15,
-								slidesPerView: 2,
-							},
-						},
-					});
-				});
-			}
-
-			function thumnailSlide() {
-				document.querySelectorAll(".widget_thum_swipe").forEach((el) => {
-					const swiper = new Swiper(el, {
-						loop: true,
-						slidesPerView: 1,
-						pagination: {
-							el: el.querySelector(".swiper-pagination"),
-							clickable: true,
-						},
-						allowTouchMove: false,
-					});
-
-					el.swiper = swiper;
-
-					el.addEventListener("mouseenter", () => {
-						// 조건은 항상 여기서 판단
-						if (!window.matchMedia("(hover: hover)").matches || window.innerWidth <= 1023) {
-							return;
-						}
-
-						// 🔥 렌더/리사이즈 안정화 후 실행
-						setTimeout(() => {
-							// 이미 나갔으면 무시
-							if (!el.matches(":hover")) return;
-
-							swiper.params.autoplay = {
-								delay: 1200,
-								disableOnInteraction: false,
-							};
-
-							swiper.autoplay.start();
-						}, 0);
-					});
-
-					el.addEventListener("mouseleave", () => {
-						if (swiper.autoplay) {
-							swiper.autoplay.stop();
-						}
-						swiper.params.autoplay = false;
-					});
-				});
-			}
-		</script>
 	</div>
 </body>
 

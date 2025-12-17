@@ -1,0 +1,75 @@
+
+/* tape banner */
+@import '_mixin';
+.tape_banner_zone{max-width:1200px;margin:0 auto; padding:0 30px;}
+.tape_banner_wrap{position:relative;}
+.btn_tape_control{
+    display:block; width:28px;height:28px; z-index:5; background:#fff; border:1px solid #c6c6c6; border-radius: 100%; position:absolute;top:50%;transform:translateY(-50%);
+    &:after{display:block;content:''; margin:-5px 0 0 -3px; width:8px;height:8px;border-left:1px solid #000; border-bottom:1px solid #000; transform: rotate(45deg); position:absolute;top:50%; left:50%;}
+    &.prev_navi{left:0;margin-left:-14px;}
+    &.next_navi{right:0;margin-right:-14px;
+        &:after{transform:rotate(-135deg); margin-left:-6px;}
+    }
+}
+.swiper-container{
+    &.tape_swiper{}
+    .swiper-wrapper{}
+    .swiper-slide{}
+}
+.tape_swiper_banner{
+    display:block;position:relative; height:200px;
+    .bg_img_group{position:absolute;top:0;left:0;width:100%; height:100%;}
+    .bg_img{
+        position:absolute;top:0;left:0;width:100%; height:100%;
+        background-repeat: no-repeat; background-size:cover; background-position:100% 100%;
+        &.pc{}
+        &.mb{display:none;}
+    }
+}
+.tape_copy_wrap{position:absolute;top:0;left:0; width:57.2%; padding:0 0 0 55px; height:100%;box-sizing: border-box; display: flex; align-items: flex-start; flex-direction: column;  justify-content: center;}
+.tape_sub_copy{font-size:15px; color:#000000; margin-bottom:10px; @include clamp(1);}
+.tape_main_copy{
+    font-size:30px; color:#000000; font-weight:500; gap:7px; @include clamp(2);
+    .tape_emp{
+        font-weight:500; display:inline-block; position:relative; white-space: nowrap;
+        .text_node{display:inline-block;position:relative;}
+        &:before{display:block;content:''; height:8px;width:100%; background:#fff; opacity:.5; position:absolute;bottom:2px;left:0;}
+    }
+    .tape_main_else_node{ @include clamp(2);font-weight:500;}
+}
+.tape_sns_group{margin-top:15px;}
+.tape_sns_list{
+    display:flex; justify-content: flex-end; align-items: center; gap:10px;
+    > li{}
+}
+.tape_sns_item{
+    max-width:32px;display:inline-block;
+    img{vertical-align: middle;}
+}
+
+
+@media (max-width:1500px){
+
+}
+
+@media (max-width:1023px) {
+    .tape_swiper_banner{
+        height:120px;
+        .bg_img{
+            &.pc{display:none;}
+            &.mb{display:block;}
+        }
+    }
+
+    .tape_sub_copy{font-size:13px; @include clamp(1); margin-bottom:5px;  text-shadow: 2px 2px 2px rgba(255,255,255,0.5);}
+    .tape_main_copy{
+        font-size:20px; @include clamp(2); text-shadow: 2px 2px 2px rgba(255,255,255,0.5);
+        .tape_emp{
+            &:before{height:4px;}
+            display:block;
+        }
+    }
+    .tape_copy_wrap{width:calc(100% - 30px);padding-left:30px;}
+}
+@media (max-width:767px) {
+}

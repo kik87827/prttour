@@ -8,10 +8,25 @@ const autoprefixer = require("gulp-autoprefixer");
 const sass = require("gulp-sass")(require("sass"));
 const beautify = require("gulp-beautify");
 const htmlbeautify = require("gulp-html-beautify");
+const cssbeautify = require("gulp-cssbeautify"); 
 
 // SCSS
 function scssTask() {
-  return src("./src/assets/css/*.scss").pipe(plumber()).pipe(sourcemaps.init()).pipe(sass().on("error", sass.logError)).pipe(autoprefixer()).pipe(sourcemaps.write(".")).pipe(dest("./dist/assets/css/")).pipe(connect.reload());
+  return src("./src/assets/css/*.scss")
+    .pipe(plumber())
+    .pipe(sourcemaps.init())
+    .pipe(sass({ outputStyle: "expanded" }).on("error", sass.logError))
+    .pipe(autoprefixer())
+    .pipe(
+      cssbeautify({
+        indent: "  ",
+        autosemicolon: true,
+        openbrace: "end-of-line",
+      })
+    )
+    .pipe(sourcemaps.write("."))
+    .pipe(dest("./dist/assets/css/"))
+    .pipe(connect.reload());
 }
 
 // JS Beautify

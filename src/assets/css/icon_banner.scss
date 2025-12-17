@@ -1,0 +1,159 @@
+/* icon banner  */
+@import '_mixin';
+.btn_icon_control{
+    width:30px;height:30px;  position:absolute; top:50%; z-index:5; transform: translateY(-50%);
+    &.prev_navi{left:-15px;
+        &:after{transform: rotate(-135deg);margin-left:-3px;}
+    }
+    &.next_navi{right:-15px;}
+    &:after{
+        display:block; content:''; width:12px; height:12px; border-top:1px solid #000; border-right:1px solid #000; position:absolute;top:50%;left:50%; margin:-7px 0 0 -10px; transform: rotate(45deg);
+    }
+}
+.icon_banner_container{max-width:1400px; margin:0 auto; padding:0 30px; position:relative; text-align: center;}
+.icon_banner_container.center_type{
+    .icon_banner_item{justify-content: center;padding:0;}
+}
+.btn_icon_control{
+    &.prev{}
+    &.next{}
+}
+.swiper-container{
+    &.icon_banner_swiper{padding:10px 0;}
+    .swiper-wrapper{}
+    .swiper-slide{}
+}
+.icon_banner_item{
+    display:flex; min-height:76px; align-items: center; border-radius: 8px; box-sizing: border-box; padding:3px 15px;
+    transition:transform 1s;transform:translateY(0);
+    &:hover {transform:translateY(-10px);}
+    .ico_cell{
+        flex:0 0 70px; position:relative; width:70px; height:70px;
+        img{
+            &.fiqure_img{
+                @include dataImage;
+            }
+        }
+    }
+    .text_cell{
+        .text_node{
+            font-size:16px; color:#333333; font-weight:500; @include clamp(2);
+        }
+    }
+    &.bg_theme01{background-color:#f7f2ff;}
+    &.bg_theme02{background-color:#fff2f2;}
+    &.bg_theme03{background-color:#fff1e7;}
+    &.bg_theme04{background-color:#e8f9ee;}
+    &.bg_theme05{background-color:#fff6d8;}
+    &.bg_theme06{background-color:#fbeefd;}
+    &.bg_theme07{background-color:#e4effa;}
+}
+
+
+@media (max-width:1500px){
+    .icon_banner_container{padding:0 60px;}
+    .btn_icon_control{
+        &.prev_navi{left:15px;}
+        &.next_navi{right:15px;}
+    }
+    .icon_banner_item{padding:0;gap:0;}
+}
+
+@media (max-width:1023px){
+    .icon_banner_container{padding:0 50px;}
+    .swiper-container{
+        &.icon_banner_swiper{padding:0;}
+        .swiper-wrapper{}
+        .swiper-slide{}
+    }
+    .btn_icon_control{
+        width:20px;height:20px;
+        &.prev_navi{left:15px;
+            &:after{margin-left:-2px;}
+        }
+        &.next_navi{right:15px;}
+        &:after{
+            width:8px; height:8px;  margin:-4px 0 0 -7px;
+        }
+    }
+
+    .icon_banner_item{
+        min-height:0; align-items: center; border-radius: 0; flex-direction: column; justify-content: flex-start; gap:10px;
+        transform:translateY(0) !important;
+        .ico_cell{
+            flex:0 0 60px; position:relative; width:60px; height:60px; border-radius: 8px;
+            img{
+                &.fiqure_img{
+                    @include dataImage;
+                }
+            }
+        }
+        .text_cell{
+            .text_node{
+                font-size:13px;
+            }
+        }
+        background:none !important;
+        &.bg_theme01{
+            .ico_cell{
+                background-color:#f7f2ff;
+            }
+        }
+        &.bg_theme02{
+            .ico_cell{
+                background-color:#fff1e7;
+            }
+        }
+        &.bg_theme03{
+            .ico_cell{
+                background-color:#e8f9ee;
+            }
+        }
+        &.bg_theme04{
+            .ico_cell{
+                background-color:#fff6d8;
+            }
+        }
+        &.bg_theme05{
+            .ico_cell{
+                background-color:#fbeefd;
+            }
+        }
+        &.bg_theme06{
+            .ico_cell{
+                background-color:#fbeefd;
+            }
+        }
+        &.bg_theme07{
+            .ico_cell{
+                background-color:#e4effa;
+            }
+        }
+    }
+}
+@media (max-width:374px){
+    .icon_banner_item{
+        .ico_cell{
+            flex:0 0 50px; width:50px; height:50px;
+        }
+        .text_cell{
+            .text_node{
+                font-size:12px;
+            }
+        }
+    }
+}
+@media (max-width:359px){
+    .icon_banner_item{
+        .ico_cell{
+            flex:0 0 40px; width:40px; height:40px;
+        }
+        .text_cell{
+            .text_node{
+                font-size:10px;
+            }
+        }
+    }
+}
+
+/* // icon banner  */

@@ -29,8 +29,10 @@
 		</div>
 		<main class="middle_wrap">
 			<div class="middle_info_compo_wrap">
-				<div class="banner-chipcard-title-row">
-					<h3 class="banner-chipcard-title">크루즈</h3>
+				<!-- css -->
+				<link href="./assets/css/product_template.css" rel="stylesheet" />
+				<div class="product-top-title-row">
+					<h3 class="product-top-title">크루즈</h3>
 				</div>
 				<div class="plate_linkage_zone">
 					<a href="#" class="btn_plate_navi prev_navi"></a>
@@ -154,32 +156,33 @@
 					</div>
 					<a href="#" class="btn_plate_navi next_navi"></a>
 				</div>
+				<!-- js -->
+				<script>
+					var product1_obj = new Swiper(".swiper-container.plate-swiper", {
+						slidesPerView: 4, // 한 화면에 4개
+						slidesPerGroup: 1, // 한 번에 1개씩
+						spaceBetween: 27, // 간격
+						loop: true,
+						navigation: {
+							nextEl: ".btn_plate_navi.next_navi",
+							prevEl: ".btn_plate_navi.prev_navi",
+						},
+						breakpoints: {
+							1500: {
+								spaceBetween: 20,
+							},
+							1400: {
+								spaceBetween: 20,
+								slidesPerView: 3,
+							},
+							1023: {
+								spaceBetween: 20,
+								slidesPerView: 2,
+							},
+						},
+					});
+				</script>
 			</div>
-			<script>
-				var product1_obj = new Swiper(".swiper-container.plate-swiper", {
-					slidesPerView: 4, // 한 화면에 4개
-					slidesPerGroup: 1, // 한 번에 1개씩
-					spaceBetween: 27, // 간격
-					loop: true,
-					navigation: {
-						nextEl: ".btn_plate_navi.next_navi",
-						prevEl: ".btn_plate_navi.prev_navi",
-					},
-					breakpoints: {
-						1500: {
-							spaceBetween: 20,
-						},
-						1400: {
-							spaceBetween: 20,
-							slidesPerView: 3,
-						},
-						1023: {
-							spaceBetween: 20,
-							slidesPerView: 2,
-						},
-					},
-				});
-			</script>
 		</main>
 	</div>
 </body>
