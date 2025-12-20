@@ -1133,11 +1133,13 @@
 									<div class="mv_field_formitem" data-poslayer="#layer_box_search">
 										<i class="mv_field_ico shape_search"></i>
 										<div class="search_form_text_g">
-											<div class="search_form_text_place">검색어</div>
-											<div class="search_form_text_result_row">
-												<div class="search_form_text_result"></div>
-												<button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
-											</div>
+											<!-- 251220 수정 -->
+											<input type="text" class="mv_input_form" placeholder="검색어" />
+											<!-- <div class="search_form_text_place">검색어</div>
+                       <div class="search_form_text_result_row">
+                          <div class="search_form_text_result"></div>
+                          <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                        </div> -->
 										</div>
 									</div>
 								</li>
@@ -1192,24 +1194,24 @@
 		</main>
 		<!-- prettier-ignore -->
 		<!-- layer -->
-		<div class="poslayer_z has_leftpos" id="layer_box_search" data-topmargin="20" data-topMobileMargin="0">
-			<div class="poslayer_titlow">
-				<p class="poslayer_tit">검색어입력</p>
-			</div>
-			<div class="poslayer_contlow">
-				<div class="pcont_w">
-					<div class="pclayer_scr_w">
-						<div class="search_field_box">
-							<input type="text" class="input_search_field" placeholder="검색어를 입력하세요" />
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="btn_psubmit_w">
-				<a href="#" class="btn_psubmit">선택</a>
-			</div>
-			<button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
-		</div>
+		<!-- <div class="poslayer_z has_leftpos" id="layer_box_search" data-topmargin="20" data-topMobileMargin="0">
+  <div class="poslayer_titlow">
+    <p class="poslayer_tit">검색어입력</p>
+  </div>
+  <div class="poslayer_contlow">
+    <div class="pcont_w">
+      <div class="pclayer_scr_w">
+        <div class="search_field_box">
+          <input type="text" class="input_search_field" placeholder="검색어를 입력하세요" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="btn_psubmit_w">
+    <a href="#" class="btn_psubmit">선택</a>
+  </div>
+  <button type="button" class="layerclose"><span class="hdtext">닫기</span></button>
+</div> -->
 		<div class="poslayer_z has_leftpos" id="layer_box_service" data-topmargin="20" data-topMobileMargin="0">
 			<div class="poslayer_titlow">
 				<p class="poslayer_tit">상품</p>

@@ -71,6 +71,7 @@
   position: relative;
   background: #006de1;
   border-radius: 18px;
+  overflow: hidden;
 }
 
 .entry_box_item {
@@ -188,13 +189,11 @@
   }
 
   .entry_box_item {
-    gap: 20px;
-    min-height: 200px;
-    padding: 20px;
+    flex-direction: column;
+    gap: 15px;
+    padding: 0;
   }
-}
 
-@media (max-width: 768px) {
   .entry_banner_package {
     padding: 40px 0 25px;
   }
@@ -208,8 +207,12 @@
   }
 
   .entry_thum_cols {
-    flex-basis: 45%;
-    width: 45%;
+ /* flex-basis: 45%; width:45% */
+    padding-bottom: 100%;
+    height: 0;
+    flex: 0;
+    width: 100%;
+    border-radius: 0;
   }
 
   .btn_entry_control {
@@ -245,7 +248,7 @@
     word-break: break-all;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 2;
+    -webkit-line-clamp: 1;
     overflow: hidden;
   }
 
@@ -262,10 +265,8 @@
     overflow: hidden;
   }
 
-  .entry_box_item {
-    gap: 15px;
-    min-height: 120px;
-    padding: 15px;
+  .entry_spec_cols {
+    padding: 0 15px 15px;
   }
 }
 /* // visual banner */
