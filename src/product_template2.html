@@ -522,14 +522,6 @@
               thumnailSlide();
             });
             function productDisplay2() {
-              /*
-                <div class="dphor_swiper_zone">
-                      <div class="dphor_swiper_wrap">
-                        <div class="swiper-container dp_swipe">
-                          <div class="swiper-wrapper">
-                            <div class="swiper-slide">
-              */
-
               const dphor_swiper_zone = document.querySelectorAll(".dphor_swiper_zone");
               const dphor_banner_array = [];
               dphor_swiper_zone.forEach((el, index) => {
@@ -574,11 +566,7 @@
                     slideChangeTransitionEnd() {},
                   },
                   breakpoints: {
-                    1400: {
-                      spaceBetween: 15,
-                      slidesPerView: 3,
-                    },
-                    767: {
+                    1023: {
                       spaceBetween: 15,
                       slidesPerView: 2,
                     },

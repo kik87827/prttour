@@ -84,9 +84,6 @@
          min-width:100px;
         .text_node{font-size:14px; }
     }
-}
-@media (max-width:767px){
     .dpitem_horizon{flex-direction: column;}
     .dpfront_cols{flex-basis: auto; width:auto;}
-    .dphor_swiper_zone .widget_thum_row{flex-basis: 120px; height:120px;}
 }

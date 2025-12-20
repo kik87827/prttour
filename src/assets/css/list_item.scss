@@ -49,4 +49,12 @@
 }
 .touchmode .widget_thum_swiper_wrap .swiper-pagination{display:none;}
 
+@media (max-width:$mobile_large){
+    .widget_thum_row{
+        flex-basis:150px; height:150px;
+        &:after{display:block;content:'';width:100%;height:100%;position:absolute;top:0;left:0;opacity:.2;z-index:5;}
+        img{@include dataImage2}
+        .swiper-pagination{display:none;}
+    }
+}
 /* // list item */
