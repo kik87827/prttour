@@ -23,7 +23,7 @@
 }
 
 .filled_contents_row{}
-.btn_band_control,.btn_dphor_control{
+.btn_band_control{
     display:block; width:28px;height:28px; z-index:5; background:#fff; border:1px solid #c6c6c6; border-radius: 100%; position:absolute;top:50%;transform:translateY(-50%);
     &:after{display:block;content:''; margin:-5px 0 0 -3px; width:8px;height:8px;border-left:1px solid #000; border-bottom:1px solid #000; transform: rotate(45deg); position:absolute;top:50%; left:50%;}
     &.prev_navi{left:0;margin-left:-14px;}
@@ -53,21 +53,31 @@
 @media (max-width:1460px){
     .band_swiper_zone{
         padding:0 30px;
-        .btn_band_control{
-            &.prev_navi{margin-left:0;left:14px;}
-            &.next_navi{margin-right:0;right:14px;}
-        }
+    }
+    .btn_band_control{
+        &.prev_navi{margin-left:0;left:14px;}
+        &.next_navi{margin-right:0;right:14px;}
     }
 
 }
 @media (max-width:1023px){
     .filled_title{font-size:24px;}
 
+    .btn_band_control{width:20px;height:20px;
+        &:after{width:6px;height:6px; margin:-4px 0 0 -2px;}
+        &.prev_navi{
+            margin-left:0; left:7px;
+        }
+        &.next_navi{
+            margin-right:0; right:7px;
+            &:after{margin-left:-5px;}
+        }
+    }
+
     .band_swiper_zone{
         padding:0 20px;
-        .btn_band_control{
-            &.prev_navi{left:5px;}
-            &.next_navi{right:5px;}
+        .widget_thum_row{
+            flex-basis:120px; height:120px;
         }
     }
 

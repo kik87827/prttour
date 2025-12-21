@@ -1,5 +1,6 @@
 /* list item */
 @import '_mixin';
+
 .widget_chip_item{flex:1;background:#fff;display:flex;flex-direction: column;}
 .widget_thum_row{
     position:relative; flex:0 0 220px; height:220px;
@@ -13,7 +14,7 @@
 .widget_spec_row{flex:1; box-sizing: border-box; padding:15px;}
 .widget_main_name{font-size:14px; color:#333333; @include clamp(2);}
 .widget_sec_name{font-size:12px; color:#999999; @include clamp(1); margin-top:8px;}
-.widget_price_row{margin-top:18px;}
+.widget_price_row{margin-top:5px;}
 .widget_price_item{display:flex; align-items: center;}
 .widget_price_number{font-size:18px; font-weight:500; color:#2b2b2b;}
 .widget_price_unit{font-size:15px; color:#4e4e4e;}

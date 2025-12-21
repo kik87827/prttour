@@ -29,7 +29,7 @@
     &:after {display:block;content:'';width:10px;height:10px;border-right:1px solid #5f5f5f;border-bottom:1px solid #5f5f5f;position:absolute;top:50%;left:50%;transform:rotate(-225deg);margin:-5px 0 0 -2px;}
 }
 .btn-chipcard-navi.prev {left:-20px;&:after {}}
-.btn-chipcard-navi.next {right:-20px;&:after {transform:rotate(-45deg);margin:-5px 0 0 -9px;}}
+.btn-chipcard-navi.next {right:-20px;&:after {transform:rotate(-45deg);margin-left:-9px;}}
 .banner-chipcard-item {
     height:360px;width:280px;position:relative;overflow:hidden;border-radius:10px;
     display:block;transition:transform 1s;transform:translateY(0);
@@ -59,8 +59,36 @@
     .banner-chipcard-wrap {margin:0 30px;}
 }
 @media (max-width:1023px) {
-    .banner-chipcard-item {width:calc(100vw - 30px);}
+
+    /* .btn-chipcard-navi {
+        width:20px;height:20px;top:calc(50% - 40px);
+        &:after {width:6px;height:6px;margin:-5px 0 0 -2px;}
+    }
+    .btn-chipcard-navi.prev {left:-20px;&:after {}}
+    .btn-chipcard-navi.next {right:-20px;&:after {transform:rotate(-45deg);margin:-5px 0 0 -9px;}}
+ */
+    .btn-chipcard-navi{width:25px;height:25px; top: calc(50% - 25px);
+        &:after{width:6px;height:6px; margin:-4px 0 0 -2px;}
+        &.prev{
+            margin-left:0; left:-10px;
+        }
+        &.next{
+            margin-right:0; right:-10px;
+            &:after{margin-left:-5px;}
+        }
+    }
+
+    .swiper-container{
+        &.banner-chipcard-container{
+             .swiper-scrollbar{margin-top:20px;}
+        }
+    }
+
+    .banner-chipcard-item {width:calc(100vw - 30px); height:200px;
+         &:hover {transform:translateY(0);}
+    }
     .banner-text-group {
+        padding:20px;
         .banner-text-sub {font-size:16px;}
         .banner-text-main {font-size:14px;}
     }
