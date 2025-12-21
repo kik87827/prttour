@@ -15,29 +15,44 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="mv_swiper_item">
-                    <div class="mv_bg"><img src="./assets/images/temp_mv_sample_01.jpg" alt="" /></div>
+                    <div class="mv_bg">
+                      <img src="./assets/images/temp_mv_sample_01.jpg" class="pc" alt="" />
+                      <img src="./assets/images/temp_mv_sample_01_m.jpg" class="mb" alt="" />
+                    </div>
                     <div class="mv_copy_group">
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="mv_swiper_item">
-                    <div class="mv_bg"><img src="./assets/images/temp_mv_sample_02.jpg" alt="" /></div>
+                    <div class="mv_bg">
+                      <img src="./assets/images/temp_mv_sample_02.jpg" class="pc" alt="" />
+                      <img src="./assets/images/temp_mv_sample_02_m.jpg" class="mb" alt="" />
+                    </div>
                     <div class="mv_copy_group">
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가산티아고 여행의 시작 푸른투어 항공특가산티아고 여행의 시작 푸른투어 항공특가산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="mv_swiper_item">
-                    <div class="mv_bg"><img src="./assets/images/temp_mv_sample_03.jpg" alt="" /></div>
+                    <div class="mv_bg">
+                      <img src="./assets/images/temp_mv_sample_03.jpg" class="pc" alt="" />
+                      <img src="./assets/images/temp_mv_sample_03_m.jpg" class="mb" alt="" />
+                    </div>
                     <div class="mv_copy_group">
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
@@ -47,6 +62,8 @@
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
               </div>
@@ -94,7 +111,7 @@
                       <div class="search_form_text_g">
                         <!-- 251220 수정 -->
                         <input type="text" class="mv_input_form" placeholder="검색어" />
-                         <!-- <div class="search_form_text_place">검색어</div>
+                        <!-- <div class="search_form_text_place">검색어</div>
                        <div class="search_form_text_result_row">
                           <div class="search_form_text_result"></div>
                           <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
@@ -115,39 +132,58 @@
         </div>
         <!-- js -->
         <script>
-          var main_visual = new Swiper(".swiper-container.mv_swiper", {
-            speed: 800,
-            loop: true,
-            navigation: {
-              nextEl: ".btn_mv_control.next_navi",
-              prevEl: ".btn_mv_control.prev_navi",
-            },
-            pagination: {
-              el: ".main_visual_zone .swiper-pagination",
-              clickable: true,
-            },
-            on: {
-              slideChangeTransitionEnd: function () {
-                const swiper = this; // ★ 핵심
-
-                // 모든 비디오 정지
-                swiper.el.querySelectorAll("video").forEach((video) => {
-                  video.pause();
-                  video.currentTime = 0;
-                });
-
-                // 활성 슬라이드의 비디오만 재생
-                const activeSlide = swiper.slides[swiper.activeIndex];
-                const video = activeSlide.querySelector("video");
-
-                if (video) {
-                  video.play().catch(() => {
-                    // iOS autoplay 차단 대비 (에러 무시)
-                  });
-                }
-              },
-            },
+          $(function () {
+            mvFunc();
           });
+          function mvFunc() {
+            var main_visual = new Swiper(".swiper-container.mv_swiper", {
+              speed: 800,
+              loop: true,
+              navigation: {
+                nextEl: ".btn_mv_control.next_navi",
+                prevEl: ".btn_mv_control.prev_navi",
+              },
+              pagination: {
+                el: ".main_visual_zone .swiper-pagination",
+                clickable: true,
+              },
+              on: {
+                slideChangeTransitionEnd: function () {
+                  const swiper = this; // ★ 핵심
+
+                  // 모든 비디오 정지
+                  swiper.el.querySelectorAll("video").forEach((video) => {
+                    video.pause();
+                    video.currentTime = 0;
+                  });
+
+                  // 활성 슬라이드의 비디오만 재생
+                  const activeSlide = swiper.slides[swiper.activeIndex];
+                  const video = activeSlide.querySelector("video");
+
+                  if (video) {
+                    video.play().catch(() => {
+                      // iOS autoplay 차단 대비 (에러 무시)
+                    });
+                  }
+                },
+              },
+            });
+            var mv_swiper_wrap = $(".mv_swiper_wrap");
+            var mv_field_layer = $(".mv_field_layer");
+            var mv_swiper_item = $(".mv_swiper_item");
+            mbAction();
+            $(window).on("resize", function () {
+              mbAction();
+            });
+
+            function mbAction() {
+              if ($(window).width() <= 1023) {
+                console.log(mv_field_layer.position().top + mv_field_layer.outerHeight());
+                mv_swiper_item.css({ height: mv_field_layer.position().top + mv_field_layer.outerHeight() + 40 });
+              }
+            }
+          }
         </script>
         <!-- // -->
       </main>

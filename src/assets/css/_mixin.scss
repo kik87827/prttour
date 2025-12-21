@@ -20,7 +20,7 @@ $warn : #e84854;
 
 
 @function rem($value) {
-    $remValue: math.div($value, 16) + rem;	
+    $remValue: math.div($value, 16) + rem;
     @return $remValue;
 }
 
@@ -60,6 +60,10 @@ $warn : #e84854;
 
 @mixin dataImage2 {
     display:block; width:100%;height:100%;position:absolute;top:0;left:0; object-fit: cover; object-position: 50% 50%;
+}
+
+@mixin dataImage3 {
+    display:block; width:100%;height:100%;position:absolute;top:0;left:0; object-fit: cover; object-position:0 0;
 }
 
 @mixin clamp ($count) {

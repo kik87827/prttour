@@ -18,24 +18,33 @@
 }
 .sns_chip_item{
     width:32px; height:32px; display:inline-block;
-    img{vertical-align: middle; max-width:100%;}
+    img{vertical-align: middle; max-width:100%;
+
+    }
 }
 .sns_px_layout{
     display:flex; width:1400px; margin:0 auto; gap:100px;
 }
-.brick_photo_layout{display:flex; gap:15px;animation: scrollUpGrid 20s linear infinite}
+.brick_photo_layout{display:flex; gap:15px;  transform: translateY(-50px);
+    &.anigo{
+        animation: scrollUpGrid 25s linear infinite;
+    }
+}
 .brick_column{
     flex:1; display:flex; flex-direction: column; gap:10px;padding-top:50px;
     &.column_1{}
     &.column_2{transform: translateY(-50px);}
     &.column_3{}
     .brick_item{
-        img{vertical-align: top;}
+        img{vertical-align: top;
+            &.pc{display:block;}
+            &.mb{display:none;}
+        }
     }
 }
 @keyframes scrollUpGrid {
     0% {
-        transform: translateY(0)
+        transform: translateY(-50px)
     }
 
     100% {
@@ -57,6 +66,14 @@
 
     .dpfront_cols{
         &.empty_case{min-height:0;}
+    }
+    .brick_column{
+        .brick_item{
+            img{
+                &.pc{display:none;}
+                &.mb{display:block;}
+            }
+        }
     }
 }
 @media (max-width:768px){
