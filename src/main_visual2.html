@@ -15,29 +15,55 @@
               <div class="swiper-wrapper">
                 <div class="swiper-slide">
                   <div class="mv_swiper_item">
-                    <div class="mv_bg"><img src="./assets/images/temp_mv_sample_01.jpg" alt="" /></div>
+                    <div class="mv_bg">
+                      <img src="./assets/images/temp_mv_sample_01.jpg" class="pc" alt="" />
+                      <img src="./assets/images/temp_mv_sample_01_m.jpg" class="mb" alt="" />
+                    </div>
                     <div class="mv_copy_group">
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="mv_swiper_item">
-                    <div class="mv_bg"><img src="./assets/images/temp_mv_sample_02.jpg" alt="" /></div>
+                    <div class="mv_bg">
+                      <img src="./assets/images/temp_mv_sample_02.jpg" class="pc" alt="" />
+                      <img src="./assets/images/temp_mv_sample_02_m.jpg" class="mb" alt="" />
+                    </div>
                     <div class="mv_copy_group">
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가산티아고 여행의 시작 푸른투어 항공특가산티아고 여행의 시작 푸른투어 항공특가산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능혜택까지 빠짐없이! 부산출발도 가능</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
                 <div class="swiper-slide">
                   <div class="mv_swiper_item">
-                    <div class="mv_bg"><img src="./assets/images/temp_mv_sample_03.jpg" alt="" /></div>
+                    <div class="mv_bg">
+                      <img src="./assets/images/temp_mv_sample_03.jpg" class="pc" alt="" />
+                      <img src="./assets/images/temp_mv_sample_03_m.jpg" class="mb" alt="" />
+                    </div>
                     <div class="mv_copy_group">
                       <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
                       <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
                     </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
+                  </div>
+                </div>
+                <div class="swiper-slide">
+                  <div class="mv_swiper_item">
+                    <div class="mv_bg"><video playsinline webkit-playsinline muted preload="metadata" src="test_media.mp4"></video></div>
+                    <div class="mv_copy_group">
+                      <p class="mv_main_copy">산티아고 여행의 시작 푸른투어 항공특가</p>
+                      <p class="mv_sub_copy">패턴 이용! & 기내서비스 혜택까지 빠짐없이! 부산출발도 가능!</p>
+                    </div>
+                    <a href="#pc" class="pc_link"></a>
+                    <a href="#mb" class="mb_link"></a>
                   </div>
                 </div>
               </div>
@@ -48,15 +74,66 @@
           <div class="mv_field_layer">
             <div class="mv_field_tab_row">
               <ul class="mv_field_tab_list">
-                <li><a href="#" class="mv_field_tab active">해외여행</a></li>
-                <li><a href="#" class="mv_field_tab">투어티켓</a></li>
+                <li><a href="javascript:;" class="mv_field_tab active">해외여행</a></li>
+                <li><a href="javascript:;" class="mv_field_tab">투어티켓</a></li>
               </ul>
             </div>
             <div class="mv_field_form_row">
-              <div class="mv_field_formbox">
+              <!-- 해외여행 -->
+              <div class="mv_field_formbox active">
                 <ul class="mv_field_formitem_list">
                   <li>
                     <div class="mv_field_formitem" data-poslayer="#layer_box_local">
+                      <i class="mv_field_ico shape_where"></i>
+                      <div class="search_form_text_g">
+                        <div class="search_form_text_place">어디서</div>
+                        <div class="search_form_text_result_row">
+                          <div class="search_form_text_result"></div>
+                          <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="mv_field_formitem" id="layer_box_date">
+                      <i class="mv_field_ico shape_when"></i>
+                      <div class="search_form_text_g">
+                        <div class="search_form_text_place">언제</div>
+                        <div class="search_form_text_result_row">
+                          <div class="search_form_text_result"></div>
+                          <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="mv_field_formitem" data-poslayer="#layer_box_search">
+                      <i class="mv_field_ico shape_search"></i>
+                      <div class="search_form_text_g">
+                        <!-- 251220 수정 -->
+                        <input type="text" class="mv_input_form" placeholder="검색어" />
+                        <!-- <div class="search_form_text_place">검색어</div>
+                       <div class="search_form_text_result_row">
+                          <div class="search_form_text_result"></div>
+                          <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
+                        </div> -->
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <div class="mv_field_btn_cell">
+                  <a href="#" class="btn_mv_submit">
+                    <i class="ico shape_search"></i>
+                    <span class="text_node">Search</span>
+                  </a>
+                </div>
+              </div>
+              <!-- // 해외여행 -->
+              <!-- 투어티켓 -->
+              <div class="mv_field_formbox">
+                <ul class="mv_field_formitem_list">
+                  <li>
+                    <div class="mv_field_formitem" data-poslayer="#layer_box_local2">
                       <i class="mv_field_ico shape_where"></i>
                       <div class="search_form_text_g">
                         <div class="search_form_text_place">어디서</div>
@@ -83,13 +160,7 @@
                     <div class="mv_field_formitem" data-poslayer="#layer_box_search">
                       <i class="mv_field_ico shape_search"></i>
                       <div class="search_form_text_g">
-                        <!-- 251220 수정 -->
                         <input type="text" class="mv_input_form" placeholder="검색어" />
-                        <!--  <div class="search_form_text_place">검색어</div>
-                        <div class="search_form_text_result_row">
-                          <div class="search_form_text_result"></div>
-                          <button type="button" class="btn_search_result_reset"><span class="hdtext">리셋</span></button>
-                        </div> -->
                       </div>
                     </div>
                   </li>
@@ -101,6 +172,7 @@
                   </a>
                 </div>
               </div>
+              <!-- // 투어티켓 -->
             </div>
           </div>
         </div>
@@ -108,6 +180,7 @@
         <script>
           $(function () {
             mvFunc();
+            mvTabFunc();
           });
           function mvFunc() {
             var main_visual = new Swiper(".swiper-container.mv_swiper", {
@@ -153,12 +226,27 @@
 
             function mbAction() {
               if ($(window).width() <= 1023) {
-                console.log(mv_field_layer.position().top + mv_field_layer.outerHeight());
                 mv_swiper_item.css({ height: mv_field_layer.position().top + mv_field_layer.outerHeight() + 40 });
               }
             }
           }
+          function mvTabFunc() {
+            var $mv_field_tab = $(".mv_field_tab");
+            var $mv_field_formbox = $(".mv_field_formbox");
+            var $this_index = $mv_field_tab.index(this);
+
+            $mv_field_tab.on("click", function (e) {
+              e.preventDefault();
+              var $this = $(this);
+              var $this_index = $mv_field_tab.index(this);
+              $this.closest("ul").find(".mv_field_tab").removeClass("active");
+              $this.addClass("active");
+              $mv_field_formbox.removeClass("active");
+              $mv_field_formbox.eq($this_index).addClass("active");
+            });
+          }
         </script>
+        <!-- // -->
       </main>
       <!-- prettier-ignore -->
       @@include('mv_layer.html')

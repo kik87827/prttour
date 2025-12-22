@@ -70,7 +70,11 @@
 }
 .mv_field_form_row{}
 
-.mv_field_formbox{ background-color: rgb(255, 255, 255,0.8); border-radius: 100px; height:70px; display:flex;}
+.mv_field_formbox{ background-color: rgb(255, 255, 255,0.8); border-radius: 100px; height:70px; display:none;
+    &.active{
+        display:flex;
+    }
+}
 .mv_field_formitem_list{
      flex:1;display:flex;
     > li{flex:1; display:flex; flex-direction: column; border-right:1px solid rgba(0,0,0,.1); padding:0 20px;
