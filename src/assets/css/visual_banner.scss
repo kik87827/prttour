@@ -22,10 +22,13 @@
 }
 .entry_banner_container{max-width:1200px;margin:0 auto; position:relative; background:#006de1; border-radius: 18px; overflow:hidden;}
 
-.entry_box_item{ display:flex; gap:45px; border-radius: 18px; padding:30px; min-height:380px;}
+.entry_box_item{ display:flex; gap:45px; border-radius: 18px; padding:30px; min-height:380px; position:relative;}
 .entry_thum_cols{
     position:relative; flex:0 0 540px;width:540px;  border-radius: 18px; overflow:hidden;
-    img{@include dataImage2;}
+    img{@include dataImage3;
+        &.pc{display:block;}
+        &.mb{display:none;}
+    }
 }
 .entry_spec_cols{
     flex:1; display:flex; flex-direction: column; justify-content: center;
@@ -38,6 +41,13 @@
 .entry_main_sec{font-size:17px; @include clamp(2); margin-bottom:5px; font-weight:300;}
 .entry_main_primary{font-size:40px; font-weight:500; @include clamp(2);line-height:1.2;}
 .entry_sub_copy{font-size:17px; @include clamp(3); font-weight:300;}
+
+.entry_link_layer{
+    position:absolute;top:0;left:0;width:100%;height:100%; z-index:2;
+    &.pc{display:block;}
+    &.mb{display:none;}
+}
+
 @media (max-width:1300px){
     .entry_banner_package{padding:60px 0 35px;}
     .entry_banner_container{margin: 0 50px;}
@@ -45,6 +55,10 @@
     .entry_thum_cols{flex-basis: 50%; width:50%}
 }
 @media (max-width:1023px){
+    .entry_link_layer{
+        &.pc{display:none;}
+        &.mb{display:block;}
+    }
     .entry_thum_cols,
     .entry_banner_container{border-radius: 10px;}
     .entry_main_sec{font-size:14px;}
@@ -56,7 +70,12 @@
          .swiper-pagination{margin-top:15px;}
     }
     .entry_banner_container{margin: 0 20px;}
-    .entry_thum_cols{/* flex-basis: 45%; width:45% */ padding-bottom:100%;height:0;flex:0;width:100%;border-radius: 0;}
+    .entry_thum_cols{/* flex-basis: 45%; width:45% */ padding-bottom:100%;height:0;flex:0;width:100%;border-radius: 0;
+        img{
+            &.pc{display:none;}
+            &.mb{display:block;}
+        }
+    }
     .btn_entry_control{
         width:20px;height:20px;
         &.prev_navi{left:-20px;

@@ -56,7 +56,11 @@
     text-align:center;padding:0 30px 15px;position:relative;margin:0 auto;max-width:1200px;
     .plate-chipcard-title {font-weight:700;color:#333;font-size:28px;letter-spacing:-1px;}
 }
-
+.plate-link-layer{
+    position:absolute;top:0;left:0;width:100%;height:100%; z-index:2;
+    &.pc{display:block;}
+    &.mb{display:none;}
+}
 @media (max-width:1500px){
     .plate_swiper_wrap{
         padding:0 100px;
@@ -67,6 +71,10 @@
     }
 }
 @media (max-width:1023px) {
+    .plate-link-layer{
+        &.pc{display:none;}
+        &.mb{display:block;}
+    }
     /* .plate-chipcard-item {width:calc(100vw - 20px);} */
     .plate-chipcard-item{height:200px;
         &:hover {transform:translateY(0);}
