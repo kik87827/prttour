@@ -42,6 +42,12 @@
         }
     }
 }
+.brick_link{
+    display:block;
+    img{vertical-align: top;}
+    &.pc{display:block;}
+    &.mb{display:none;}
+}
 @keyframes scrollUpGrid {
     0% {
         transform: translateY(-50px)
@@ -58,6 +64,10 @@
     .sns_key_cols{flex-basis: 280px;}
 }
 @media (max-width:1023px){
+    .brick_link{
+        &.pc{display:none;}
+        &.mb{display:block;}
+    }
     .sns_px_layout{flex-direction: column;gap:0; padding:0 10px;}
     .sns_key_cols{flex-basis: 0; padding:20px 0;}
     .brick_photo_layout{gap:10px;}

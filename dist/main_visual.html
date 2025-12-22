@@ -1152,7 +1152,7 @@
 										<i class="mv_field_ico shape_search"></i>
 										<div class="search_form_text_g">
 											<!-- 251220 수정 -->
-											<input type="text" class="mv_input_form" placeholder="검색어" />
+											<input type="text" class="mv_input_form" placeholder="검색어" data-ph="검색어" />
 											<!-- <div class="search_form_text_place">검색어</div>
                        <div class="search_form_text_result_row">
                           <div class="search_form_text_result"></div>
@@ -1201,7 +1201,7 @@
 									<div class="mv_field_formitem">
 										<i class="mv_field_ico shape_search"></i>
 										<div class="search_form_text_g">
-											<input type="text" class="mv_input_form" placeholder="검색어" />
+											<input type="text" class="mv_input_form" placeholder="검색어" data-ph="검색어" />
 										</div>
 									</div>
 								</li>
@@ -1222,6 +1222,7 @@
 				$(function() {
 					mvFunc();
 					mvTabFunc();
+					inputPlace();
 				});
 
 				function mvFunc() {
@@ -1287,6 +1288,16 @@
 						$this.addClass("active");
 						$mv_field_formbox.removeClass("active");
 						$mv_field_formbox.eq($this_index).addClass("active");
+					});
+				}
+
+				function inputPlace() {
+					var mv_input_form = $(".mv_input_form");
+					mv_input_form.on("focusin", function() {
+						$(this).attr("placeholder", "");
+					});
+					mv_input_form.on("focusout", function() {
+						$(this).attr("placeholder", $(this).attr("data-ph"));
 					});
 				}
 			</script>

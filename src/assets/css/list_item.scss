@@ -1,7 +1,7 @@
 /* list item */
 @import '_mixin';
 
-.widget_chip_item{flex:1;background:#fff;display:flex;flex-direction: column;}
+.widget_chip_item{flex:1;background:#fff;display:flex;flex-direction: column; position:relative;}
 .widget_thum_row{
     position:relative; flex:0 0 220px; height:220px;
     img{@include dataImage2}
@@ -11,7 +11,7 @@
     .flag_box{display:inline-block;height:22px;line-height:20px; color:#fff; font-weight:500; font-size:12px; white-space: nowrap; padding:0 10px; border-radius: 8px 8px 8px 0;}
 }
 .flag_box{}
-.widget_spec_row{flex:1; box-sizing: border-box; padding:15px;}
+.widget_spec_row{flex:1; box-sizing: border-box; padding:15px;position:relative;}
 .widget_main_name{font-size:14px; color:#333333; @include clamp(2);}
 .widget_sec_name{font-size:12px; color:#999999; @include clamp(1); margin-top:8px;}
 .widget_price_row{margin-top:5px;}
@@ -31,13 +31,29 @@
         .swiper-pagination{display:block;}
     } */
 }
+.widget_link{
+    display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+    &.pc{display:block;}
+    &.mb{display:none;}
+}
+.img_link{
+    display:block;position:absolute;top:0;left:0;width:100%;height:100%;z-index:2;
+    img {
+        @include dataImage3;
+    }
+    &.pc{display:block;}
+    &.mb{display:none;}
+}
 .swiper-container{
     &.widget_thum_swipe{
         position:relative; width:100%;height:100%;
         .swiper-wrapper,
         .swiper-slide{
              width:100%;height:100%; min-height:0 !important;
-            > img{@include dataImage2}
+            > img{@include dataImage3;
+                &.pc{display:block;}
+                &.mb{display:none;}
+            }
         }
     }
     .swiper-pagination{
@@ -51,11 +67,28 @@
 .touchmode .widget_thum_swiper_wrap .swiper-pagination{display:none;}
 
 @media (max-width:$mobile_large){
+    .img_link{
+        &.pc{display:none;}
+        &.mb{display:block;}
+    }
+    .widget_link{
+        &.pc{display:none;}
+        &.mb{display:block;}
+    }
     .widget_thum_row{
         flex-basis:150px; height:150px;
         &:after{display:block;content:'';width:100%;height:100%;position:absolute;top:0;left:0;opacity:.2;z-index:5;}
-        img{@include dataImage2}
         .swiper-pagination{display:none;}
+    }
+    .swiper-container{
+        &.widget_thum_swipe{
+            .swiper-slide{
+                > img{
+                    &.pc{display:none;}
+                    &.mb{display:block;}
+                }
+            }
+        }
     }
 }
 /* // list item */

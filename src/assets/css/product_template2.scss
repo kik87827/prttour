@@ -79,6 +79,9 @@
     .dpfront_cols{flex-basis: 220px; width:220px;}
 }
 @media (max-width:1023px){
+    .dpfront_cols{
+        &.empty_case{min-height:0;}
+    }
     .btn_dphor_control{width:20px;height:20px;
         &:after{width:6px;height:6px; margin:-4px 0 0 -2px;
 
