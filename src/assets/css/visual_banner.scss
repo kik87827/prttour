@@ -20,8 +20,12 @@
         }
     }
 }
-.entry_banner_container{max-width:1200px;margin:0 auto; position:relative; background:#006de1; border-radius: 18px; overflow:hidden;}
-
+.entry_banner_container{max-width:1200px;margin:0 auto; position:relative;  }
+.swiper-container{
+    &.entry_swiper{
+        background:#006de1; border-radius: 18px; overflow:hidden; position:relative;
+    }
+}
 .entry_box_item{ display:flex; gap:45px; border-radius: 18px; padding:30px; min-height:380px; position:relative;}
 .entry_thum_cols{
     position:relative; flex:0 0 540px;width:540px;  border-radius: 18px; overflow:hidden;
@@ -59,8 +63,15 @@
         &.pc{display:none;}
         &.mb{display:block;}
     }
-    .entry_thum_cols,
-    .entry_banner_container{border-radius: 10px;}
+    /* .entry_thum_cols,
+    .entry_banner_container{border-radius: 10px;} */
+
+    .swiper-container{
+    &.entry_swiper{
+         border-radius: 10px;
+    }
+}
+
     .entry_main_sec{font-size:14px;}
     .entry_main_primary{font-size:24px; }
     .entry_sub_copy{font-size:14px; }
