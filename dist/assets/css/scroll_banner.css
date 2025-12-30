@@ -1,0 +1,297 @@
+/* scroll banner */
+.banner-chipcard-zone {
+  position: relative;
+  overflow: hidden;
+  padding-top: 10px;
+}
+
+.banner-chipcard-zone img, .banner-chipcard-zone a {
+  user-drag: none;
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto;
+}
+
+.banner-chipcard-wrap {
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.swiper-container.banner-chipcard-container {
+  width: 100%;
+  overflow: visible !important;
+}
+
+.swiper-container.banner-chipcard-container .swiper-wrapper {
+  overflow: visible !important;
+}
+
+.swiper-container.banner-chipcard-container .swiper-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.swiper-container.banner-chipcard-container .swiper-scrollbar {
+  background: #f5f5f5;
+  position: static;
+  margin-top: 37px;
+  height: 4px;
+  width: 100%;
+}
+
+.swiper-container.banner-chipcard-container .swiper-scrollbar .swiper-scrollbar-drag {
+  background: #4783d4;
+  cursor: pointer;
+  position: relative;
+}
+
+.swiper-container.banner-chipcard-container .swiper-scrollbar .swiper-scrollbar-drag:after {
+  display: block;
+  content: "";
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translate(0, -50%);
+}
+
+.btn-chipcard-navi {
+  background: #fff;
+  box-sizing: border-box;
+  z-index: 5;
+  width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  border: 1px solid #dadada;
+  position: absolute;
+  top: calc(50% - 40px);
+}
+
+.btn-chipcard-navi:after {
+  display: block;
+  content: "";
+  width: 10px;
+  height: 10px;
+  border-right: 1px solid #5f5f5f;
+  border-bottom: 1px solid #5f5f5f;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: rotate(-225deg);
+  margin: -5px 0 0 -2px;
+}
+
+.btn-chipcard-navi.prev {
+  left: -20px;
+}
+
+.btn-chipcard-navi.next {
+  right: -20px;
+}
+
+.btn-chipcard-navi.next:after {
+  transform: rotate(-45deg);
+  margin-left: -9px;
+}
+
+.banner-chipcard-item {
+  height: 360px;
+  width: 280px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 10px;
+  display: block;
+  transition: transform 1s;
+  transform: translateY(0);
+}
+
+.banner-chipcard-item:hover {
+  transform: translateY(-10px);
+}
+
+.banner-text-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  box-sizing: border-box;
+  padding: 26px 28px;
+  background: url("../images/dim_thum.png") repeat-x 0 0;
+}
+
+.banner-text-group .banner-text-main, .banner-text-group .banner-text-sub {
+  color: #fff;
+  line-height: 1.3;
+  word-break: break-all;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+}
+
+.banner-text-group .banner-text-main {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.banner-text-group .banner-text-sub {
+  margin-top: 8px;
+  font-size: 18px;
+}
+
+.banner-img-group {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.banner-img-group > img {
+  vertical-align: top;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: 50% 50%;
+  object-position: 50% 50%;
+  width: 100%;
+  height: 100%;
+  transition: 0.4s;
+  transform: scale(1);
+}
+
+.banner-img-group img.mb_thum_img {
+  display: none;
+}
+
+.banner-chipcard-title-row {
+  text-align: center;
+  padding: 0 30px 20px;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.banner-chipcard-title-row .banner-chipcard-title {
+  font-weight: 500;
+  color: #333;
+  font-size: 28px;
+  letter-spacing: -1px;
+}
+
+.banner-link-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
+
+.banner-link-layer.pc {
+  display: block;
+}
+
+.banner-link-layer.mb {
+  display: none;
+}
+
+@media (max-width: 1260px) {
+  .banner-chipcard-wrap {
+    margin: 0 30px;
+  }
+}
+
+@media (max-width: 1023px) {
+  .banner-link-layer.pc {
+    display: none;
+  }
+
+  .banner-link-layer.mb {
+    display: block;
+  }
+  /* .btn-chipcard-navi {
+         width:20px;height:20px;top:calc(50% - 40px);
+         &:after {width:6px;height:6px;margin:-5px 0 0 -2px;}
+     }
+     .btn-chipcard-navi.prev {left:-20px;&:after {}}
+     .btn-chipcard-navi.next {right:-20px;&:after {transform:rotate(-45deg);margin:-5px 0 0 -9px;}}
+  */
+  .btn-chipcard-navi {
+    width: 25px;
+    height: 25px;
+    top: calc(50% - 25px);
+  }
+
+  .btn-chipcard-navi:after {
+    width: 6px;
+    height: 6px;
+    margin: -4px 0 0 -2px;
+  }
+
+  .btn-chipcard-navi.prev {
+    margin-left: 0;
+    left: -10px;
+  }
+
+  .btn-chipcard-navi.next {
+    margin-right: 0;
+    right: -10px;
+  }
+
+  .btn-chipcard-navi.next:after {
+    margin-left: -5px;
+  }
+
+  .swiper-container.banner-chipcard-container .swiper-scrollbar {
+    margin-top: 20px;
+  }
+
+  .banner-chipcard-item {
+    width: calc(100vw - 30px);
+    height: 200px;
+  }
+
+  .banner-chipcard-item:hover {
+    transform: translateY(0);
+  }
+
+  .banner-text-group {
+    padding: 20px;
+  }
+
+  .banner-text-group .banner-text-sub {
+    font-size: 14px;
+  }
+
+  .banner-text-group .banner-text-main {
+    font-size: 16px;
+  }
+
+  .banner-chipcard-title-row {
+    padding: 0 20px 10px;
+  }
+
+  .banner-chipcard-title-row .banner-chipcard-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 767px) {
+  .banner-img-group img.pc_thum_img {
+    display: none;
+  }
+
+  .banner-img-group img.mb_thum_img {
+    display: block;
+  }
+}
+/* // scroll banner */
+/*# sourceMappingURL=scroll_banner.css.map */
